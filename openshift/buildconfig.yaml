@@ -3,16 +3,16 @@ kind: BuildConfig
 metadata:
   name: flask-app-build
 spec:
-  output:
-    to:
-      kind: ImageStreamTag
-      name: flask-app:latest
   source:
+    type: Git
     git:
       uri: https://github.com/DeepEnc/openshift-flask-app-demo.git
       ref: 0.1-develop
-    contextDir: app
-    type: Git
+    contextDir: app   
+  output:
+    to:
+      kind: ImageStreamTag
+      name: flask-app:latest  
   strategy:
     type: Docker
     dockerStrategy: {}
