@@ -8,3 +8,5 @@ spec:
     name: flask-app
   port:
     targetPort: http
+tls:
+  termination: edge
