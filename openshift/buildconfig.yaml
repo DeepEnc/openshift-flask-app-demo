@@ -12,7 +12,7 @@ spec:
   output:
     to:
       kind: ImageStreamTag
-      name: flask-app:latest  
+      name: flask-app:latest
   strategy:
     type: Docker
     dockerStrategy: {}
