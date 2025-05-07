@@ -10,6 +10,7 @@ spec:
   source:
     git:
       uri: https://github.com/DeepEnc/openshift-flask-app-demo.git
+      ref: 0.1-develop
     contextDir: app
     type: Git
   strategy:
