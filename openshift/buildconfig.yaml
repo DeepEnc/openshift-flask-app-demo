@@ -10,11 +10,14 @@ spec:
   source:
     git:
       uri: https://github.com/DeepEnc/openshift-flask-app-demo.git
-      contextDir: app
+    contextDir: app
     type: Git
   strategy:
     type: Docker
+    dockerStrategy: {}
   triggers:
     - type: GitHub
+      github:
+        secret: webhook_secret
     - type: ConfigChange
     - type: ImageChange
