@@ -1,0 +1,20 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: flask-app-build
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: flask-app:latest
+  source:
+    git:
+      uri: https://github.com/DeepEnc/openshift-flask-app-demo.git
+      contextDir: app
+    type: Git
+  strategy:
+    type: Docker
+  triggers:
+    - type: GitHub
+    - type: ConfigChange
+    - type: ImageChange
